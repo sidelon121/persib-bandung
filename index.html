@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persib Bandung Klub</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #005BAC 60%, #FFD100 100%);
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-container {
+            margin-top: 40px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            animation: bounce 2s infinite;
+            width: 220px;
+            height: 260px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-container:hover {
+            transform: scale(1.08) rotate(-3deg);
+            animation-play-state: paused;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .info {
+            margin-top: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+            padding: 24px 32px;
+            max-width: 400px;
+            text-align: center;
+            display: none;
+            animation: fadeIn 0.7s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: #005BAC;
+            margin-bottom: 0;
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            color: #FFD100;
+            font-weight: bold;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 2px #005BAC55;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>PERSIB BANDUNG</h1>
+    <div class="subtitle">Maung Bandung</div>
+    <div class="logo-container" id="logo">
+        <!-- SVG logo Persib Bandung (simplified) -->
+        <svg width="200" height="240" viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="10" width="180" height="220" rx="40" fill="#005BAC" stroke="#FFD100" stroke-width="8" />
+            <rect x="30" y="60" width="140" height="40" rx="10" fill="#FFD100" />
+            <rect x="30" y="110" width="140" height="80" rx="20" fill="#fff" />
+            <ellipse cx="100" cy="180" rx="50" ry="18" fill="#005BAC" />
+            <text x="100" y="90" text-anchor="middle" font-size="28" font-family="Arial" fill="#005BAC"
+                font-weight="bold">PERSIB</text>
+            <text x="100" y="135" text-anchor="middle" font-size="18" font-family="Arial" fill="#005BAC">BANDUNG</text>
+            <text x="100" y="200" text-anchor="middle" font-size="14" font-family="Arial" fill="#FFD100">1933</text>
+        </svg>
+    </div>
+    <div class="info" id="info">
+        <h2>Tentang Persib Bandung</h2>
+        <p>
+            Persib Bandung adalah klub sepak bola profesional Indonesia yang berbasis di Bandung, Jawa Barat. Didirikan
+            pada tahun 1919, Persib dikenal dengan julukan "Maung Bandung" dan memiliki basis suporter fanatik bernama
+            Bobotoh. Klub ini telah meraih berbagai prestasi di kancah nasional dengan berhasil meraih gelar back to
+            back champion dua musim berturut-turut dan menjadi salah satu klub paling
+            populer di Indonesia bahkan asia.
+        </p>
+    </div>
+    <script>
+        const logo = document.getElementById('logo');
+        const info = document.getElementById('info');
+        let shown = false;
+        logo.addEventListener('click', () => {
+            shown = !shown;
+            info.style.display = shown ? 'block' : 'none';
+        });
+    </script>
+</body>
+
+</html>
